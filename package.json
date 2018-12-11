@@ -1,0 +1,35 @@
+{
+  "name": "redux-action-creator-ts",
+  "version": "1.0.0",
+  "description": "type safe simple redux action creator",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "tsc --noEmit ./examples/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/en-ken/redux-action-creator-ts.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Redux",
+    "FSA"
+  ],
+  "author": "en-ken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/en-ken/redux-action-creator-ts/issues"
+  },
+  "homepage": "https://github.com/en-ken/redux-action-creator-ts#readme",
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  }
+}
