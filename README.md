@@ -4,18 +4,20 @@ Simple type-safe FSA(flux standard action) creator of redux for TypeScript.
 
 ## Installation
 
-```
+```bash
 npm install --save redux-action-creator-ts
 ```
 
 ## Usage
 1. Import `redux-action-creator-ts`
-```
+
+```ts
 import { createAction, ActionsUnion } from 'redux-action-creator-ts'
 ```
 
 2. Define a dictionary of action creators by `createAction`.
-```
+
+```ts
 const actionCreators = {
   // createAction('action type') or
   // createAction('action type', { error?: {}, payload?: {}, meta?: {} }) 
@@ -29,7 +31,8 @@ const actionCreators = {
 ```
 
 3. Define the action union.
-```
+
+```ts
 type Actions = ActionsUnion <type of actionCreators>
 ```
 
