@@ -1,10 +1,10 @@
 {
   "name": "typescript-fsa-creator",
   "version": "1.0.0",
-  "description": "type safe simple redux action creator",
+  "description": "simple type-safe flux standard action creator",
   "main": "dist/index.js",
   "files": [
-    "index.ts",
+    "dist",
     "LICENSE",
     "README.md"
   ],
