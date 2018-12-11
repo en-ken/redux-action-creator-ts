@@ -1,39 +1,36 @@
-
-// Action which has no payloads
-export interface Action<Type extends string> {
-  type: Type,
-  error?: boolean
-  meta?: Object
-}
-
-
-// Action which has a payload
-export interface ActionWithPayload<Type extends string, Payload> {
-  type: Type
-  payload: Payload
-  error?: boolean
-  meta?: Object
-}
-
-
-// function definition for Action
-export function createAction<Type extends string>(type: Type): Action<Type>
-
-// function definition for ActionWithPayload
-export function createAction<Type extends string, Payload>(
-  type: Type,
-  payload: Payload
-): ActionWithPayload<Type, Payload>
-
-// implemantation of createAction
-export function createAction<Type, Payload>(
-  type: Type,
+// optional values of FSA
+interface FSAOptions<Payload, Meta> {
   payload?: Payload,
-  error?: boolean) {
-  return payload ? { type, payload } : { type }
+  error?: boolean,
+  meta?: Meta,
 }
 
-// union definition of actions(Action or ActionWithPayload)
+// type only action
+export interface SimpleAction<Type extends string> {
+  type: Type
+}
+
+// flux standard action
+export type FSA<Type extends string, Payload, Meta> = SimpleAction<Type> & FSAOptions<Payload, Meta>
+
+
+// type definition of function for SimpleAction
+export function createAction<Type extends string>(type: Type): SimpleAction<Type>
+
+// type definition of function for FSA
+export function createAction<Type extends string, Payload, Meta>(
+  type: Type,
+  options: FSAOptions<Payload, Meta>
+): FSA<Type, Payload, Meta>
+
+// implementation of createAction
+export function createAction<Type, Payload, Meta>(
+  type: Type,
+  options?: FSAOptions<Payload, Meta>) {
+  return options ? { type, ...options } : { type }
+}
+
+// union type of actions(SimpleAction or FSA)
 // exclude ThunkAction( (...args: any[]) => Promise<void> )
 export type ActionsUnion<
   A extends { [actionCreator: string]: (...args: any[]) => any }
