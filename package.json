@@ -21,7 +21,10 @@
   "keywords": [
     "TypeScript",
     "Redux",
-    "FSA"
+    "FSA",
+    "Flux Standard Action",
+    "Action Creator",
+    "type-safe"
   ],
   "author": "en-ken",
   "license": "MIT",
