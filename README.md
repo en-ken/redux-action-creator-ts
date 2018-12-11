@@ -1,18 +1,18 @@
-# redux-action-creator-ts
+# typescript-fsa-creator
 
-Simple type-safe FSA(flux standard action) creator of redux for TypeScript.
+Simple type-safe FSA(flux standard action) creator for TypeScript.
 
 ## Installation
 
 ```bash
-npm install --save redux-action-creator-ts
+npm install --save typescript-fsa-creator
 ```
 
 ## Usage
-1. Import `redux-action-creator-ts`
+1. Import `typescript-fsa-creator`
 
 ```ts
-import { createAction, ActionsUnion } from 'redux-action-creator-ts'
+import { createAction, ActionsUnion } from 'typescript-fsa-creator'
 ```
 
 2. Define a dictionary of action creators by `createAction`.
