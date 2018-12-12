@@ -1,18 +1,17 @@
 {
-  "name": "redux-action-creator-ts",
+  "name": "typescript-fsa-creator",
   "version": "1.0.0",
   "description": "type safe simple redux action creator",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "files": [
     "index.ts",
     "LICENSE",
     "README.md"
   ],
-  "directories": {
-    "example": "examples"
-  },
   "scripts": {
-    "test": "tsc --noEmit ./examples/test.ts"
+    "build": "tsc",
+    "test": "tsc --noEmit ./examples/test.ts",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",

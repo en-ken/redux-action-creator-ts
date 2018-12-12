@@ -1,4 +1,4 @@
-import { createAction, ActionsUnion } from '../index'
+import { createAction, ActionsUnion } from '../src'
 
 enum ActionType {
   SIMPLE = 'redux-action-create-ts/examples/SIMPLE',
