@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf ./dist;tsc",
     "test": "tsc --noEmit ./examples/test.ts",
     "prepare": "npm run build"
   },
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/en-ken/typescript-fsa-creator#readme",
   "devDependencies": {
+    "rimraf": "^2.6.2",
     "typescript": "^2.8.0"
   }
 }
