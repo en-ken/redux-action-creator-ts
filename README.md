@@ -26,6 +26,9 @@ const actionCreators = {
     'WITH_PAYLOAD', { payload: { payload1 } }),
   withError: (errorDetails: string) => createAction(
     'WITH_ERROR', { error: true }),
+  withMeta: () => createAction(
+    ActionType.WITH_META,
+    { meta: { meta1: 'foo' } }),
   ...
 }
 ```
@@ -33,8 +36,39 @@ const actionCreators = {
 3. Define the action union.
 
 ```ts
-type Actions = ActionsUnion <type of actionCreators>
+type Action = ActionsUnion <type of actionCreators>
 ```
 
-After that, types of actions can be resolved naturally by using `Actions`.
-See [examples](./examples/test.ts) to understand how to use this.
+After that, types of actions can be resolved in `switch` sentence by using `Action`.
+
+```ts
+interface State {
+  error: boolean,
+  payload: string,
+  meta: string
+}
+
+const reducer = (
+  state: State,
+  action: Action
+) => {
+  switch (action.type) {
+    case ActionType.SIMPLE:
+      return state
+    case ActionType.WITH_PAYLOAD:
+      return {
+        ...state,
+        payload: action.payload!.payload1
+      }
+    case ActionType.WITH_ERROR:
+      return {
+        ...state,
+        error: action.error!
+      }
+    case ActionType.WITH_META:
+      return {
+        ...state,
+        meta: action.meta!.meta1
+      }
+  ...
+```

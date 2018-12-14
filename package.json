@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-creator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple type-safe flux standard action creator",
   "main": "dist/index.js",
   "files": [
